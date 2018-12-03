@@ -1,0 +1,12 @@
+.example-card {
+    min-width: 350px;
+    margin-top: 3em;
+  }
+
+.cus-content{
+    margin-left: 3em;
+}
+
+.cus-content .fas {
+    margin-right: 5px;
+}

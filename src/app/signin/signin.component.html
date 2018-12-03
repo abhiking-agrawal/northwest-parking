@@ -1,0 +1,45 @@
+<div fxLayout="row" fxLayoutAlign="center center" class="page-body">
+  <mat-card class="example-card" fxFlexAlign="center">
+    <mat-card-content>
+      <mat-tab-group>
+        <mat-tab label="Login">
+          <form class="example-form mt1" #signInForm="ngForm"  (ngSubmit)="login(signInForm)" autocomplete="off">
+            <mat-form-field class="example-full-width">
+              <input name="username" [(ngModel)]="user.username" #username="ngModel" matInput placeholder="Username" required>
+              <mat-error *ngIf="username.invalid">Please enter username</mat-error>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <input type="password" name="password" [(ngModel)]="user.password" #password="ngModel" matInput placeholder="Password" required>
+              <mat-error *ngIf="password.invalid">Please enter password</mat-error>
+            </mat-form-field>
+            <button class="mt1" type="submit" mat-raised-button color="primary" >Login</button>
+          </form>
+        </mat-tab>
+        <mat-tab label="Sign Up">
+          <form class="mt1" #signUpForm="ngForm"  (ngSubmit)="signUp(signUpForm)" autocomplete="off">
+            <mat-form-field class="example-full-width">
+              <input name="firstName" [(ngModel)]="user.firstName" #firstName="ngModel" matInput placeholder="First name" required>
+              <mat-error *ngIf="firstName.invalid">Please enter first name</mat-error>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <input name="lastName" [(ngModel)]="user.lastName" #lastName="ngModel" matInput placeholder="Last name" required>
+              <mat-error *ngIf="lastName.invalid">Please enter last name</mat-error>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <input name="emailId" [(ngModel)]="user.emailId" #emailId="ngModel" matInput placeholder="Email Id" required>
+              <mat-error *ngIf="emailId.invalid">Please enter email id</mat-error>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <input type="password" name="password" [(ngModel)]="user.password" #password="ngModel" matInput placeholder="Password" required>
+              <mat-error *ngIf="password.invalid">Please enter password</mat-error>
+            </mat-form-field>
+            <button class="mt1" type="submit" mat-raised-button color="primary" >Sign Up</button>
+          </form>
+        </mat-tab>
+
+      </mat-tab-group>
+
+
+    </mat-card-content>
+  </mat-card>
+</div>

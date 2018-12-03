@@ -1,0 +1,18 @@
+.example-card {
+  min-width: 150px;
+  max-width: 500px;
+  max-width: 400px;
+  margin-top: 4em;
+}
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  max-width: 400px;
+}
+.mt1{ 
+  margin-top: 1em;
+}
+
+.example-full-width {
+  width: 100%;
+}
