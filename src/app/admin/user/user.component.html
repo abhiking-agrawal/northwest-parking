@@ -1,3 +1,60 @@
-<p>
-  user works!
-</p>
+<div class="container" fxFlex="80" fxFlexOffset="10">
+  <div flex>
+    <button mat-flat-button color="primary">Add User</button>
+
+    <mat-form-field style="float:right">
+      <input autocomplete="off" matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+    </mat-form-field>
+  </div>
+  <div class="mat-elevation-z8" style="clear:both">
+    <table mat-table [dataSource]="dataSource" matSort>
+
+      <!-- ID Column -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+        <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+      </ng-container>
+
+      <!-- Progress Column -->
+      <ng-container matColumnDef="firstName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> First Name </th>
+        <td mat-cell *matCellDef="let row"> {{row.firstName}}</td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="lastName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Last Name </th>
+        <td mat-cell *matCellDef="let row"> {{row.lastName}} </td>
+      </ng-container>
+
+      <!-- Color Column -->
+      <ng-container matColumnDef="emailId">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Email Id </th>
+        <td mat-cell *matCellDef="let row" > {{row.emailId}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="phoneNumber">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Phone Number </th>
+          <td mat-cell *matCellDef="let row" > {{row.phoneNumber}} </td>
+        </ng-container>
+
+      <ng-container matColumnDef="action">
+          <th mat-header-cell *matHeaderCellDef class="action-row">Action </th>
+          <td mat-cell *matCellDef="let record">
+            <div style="display:block">
+              <span  (click)="viewRecord(record)" class="fa fa-eye actions" aria-hidden="true"></span>
+               <span  (click)="editRecord(record._id)" class="fa fa-edit actions" aria-hidden="true"></span>
+              <span  class="fa fa-trash-alt actions" aria-hidden="true" (click)="deleteRecord(record)"></span> 
+            </div>
+          </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+      </tr>
+    </table>
+
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+  </div>
+
+</div>

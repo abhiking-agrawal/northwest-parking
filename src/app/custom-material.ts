@@ -6,6 +6,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatTabsModule} from '@angular/material/tabs';
+import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
     imports: [
@@ -15,7 +18,10 @@ import {MatTabsModule} from '@angular/material/tabs';
         MatFormFieldModule,
         MatInputModule,
         MatTabsModule,
-        MatCardModule
+        MatCardModule,
+        MatTableModule,
+        MatPaginatorModule,
+        MatDialogModule
     ],
     exports: [
         CommonModule,
@@ -24,7 +30,10 @@ import {MatTabsModule} from '@angular/material/tabs';
         MatFormFieldModule,
         MatInputModule,
         MatTabsModule,
-        MatCardModule
+        MatCardModule,
+        MatTableModule,
+        MatPaginatorModule,
+        MatDialogModule
     ],
 })
 export class CustomMaterialModule { }

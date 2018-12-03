@@ -1,0 +1,14 @@
+<h1 mat-dialog-title>User Details</h1>
+<div mat-dialog-content>
+  <p><b>First name</b></p>
+  <p>{{ data.firstName}}</p>
+  <p><b>Last name</b></p>
+  <p>{{ data.lastName}}</p>
+  <p><b>Email id</b></p>
+  <p>{{ data.emailId}}</p>
+  <p><b>Phone Number</b></p>
+  <p>{{ data.phoneNumber}}</p>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()" color="primary">Ok</button>
+</div>

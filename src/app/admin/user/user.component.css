@@ -1,0 +1,34 @@
+.container{
+    margin-top: 2em;
+}
+.row{
+    display: flex;
+}
+.example-fill-remaining-space {
+    /* This fills the remaining space, by using flexbox. 
+       Every toolbar row uses a flexbox row layout. */
+    flex: 1 1 auto;
+}
+
+table {
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 40%;
+  /* float: left; */
+}
+
+td, th {
+  width: 25%;
+}
+
+.actions{
+    /* letter-spacing: 2ex; */
+    padding-right: 1em;
+  }
+
+.action-row{
+    min-width: 100px;
+}

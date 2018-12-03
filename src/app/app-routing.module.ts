@@ -4,8 +4,12 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { SigninComponent } from './signin/signin.component';
 import { OffersComponent } from './offers/offers.component';
 import { HomeComponent } from './home/home.component';
+import { UserComponent } from './admin/user/user.component';
+import { ParkingSpotComponent } from './admin/parking-spot/parking-spot.component';
 
 const routes: Routes = [
+  { path: 'admin/users', component: UserComponent },
+  { path: 'admin/parkingspots', component: ParkingSpotComponent },
   { path: 'contact-us', component: ContactUsComponent },
   { path: 'signIn', component: SigninComponent },
   { path: 'offers', component: OffersComponent },

@@ -1,0 +1,8 @@
+<h1 mat-dialog-title>Confirm!</h1>
+<div mat-dialog-content style="display:flex">
+  <h3>{{data.message}}</h3>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()" color="secondary">No</button>
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial color="primary">Yes</button>
+</div>

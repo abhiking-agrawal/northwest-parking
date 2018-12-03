@@ -15,6 +15,9 @@ import { HomeComponent } from './home/home.component';
 import { CustomMaterialModule } from "./custom-material";
 import { UserComponent } from './admin/user/user.component';
 import { ParkingSpotComponent } from './admin/parking-spot/parking-spot.component';
+import { DeleteUserComponent } from './dialogs/delete-user/delete-user.component';
+import { ViewUserComponent } from './dialogs/view-user/view-user.component';
+import { AddOrEditUserComponent } from './dialogs/add-or-edit-user/add-or-edit-user.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,10 @@ import { ParkingSpotComponent } from './admin/parking-spot/parking-spot.componen
     OffersComponent,
     HomeComponent,
     UserComponent,
-    ParkingSpotComponent
+    ParkingSpotComponent,
+    DeleteUserComponent,
+    ViewUserComponent,
+    AddOrEditUserComponent
   ],
   imports: [
     BrowserModule,
@@ -37,6 +43,10 @@ import { ParkingSpotComponent } from './admin/parking-spot/parking-spot.componen
     FlexLayoutModule   
   ],
   providers: [],
+  entryComponents:[
+    DeleteUserComponent,
+    ViewUserComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
