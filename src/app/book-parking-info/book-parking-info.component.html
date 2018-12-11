@@ -1,28 +1,41 @@
 <div fxLayout="row" fxLayoutAlign="center center" class="page-body">
   <mat-card class="example-card" fxFlexAlign="center">
     <mat-card-content>
-      <h3> Contact Us</h3>
-      <form class="example-form mt1" #signInForm="ngForm" (ngSubmit)="login(signInForm)" autocomplete="off">
+      <h3> Provide booking details</h3>
+      <form class="example-form mt1" #bookingForm="ngForm" (ngSubmit)="confirmBooking(bookingForm)" autocomplete="off">
         <mat-form-field class="example-full-width">
-          <input name="name" [(ngModel)]="contact.name" #name="ngModel" matInput placeholder="Name" required>
-          <mat-error *ngIf="name.invalid">Please enter name</mat-error>
+          <input name="name" [(ngModel)]="bookInfo.memo" #name="ngModel" matInput placeholder="Memo" required>
+          <mat-error *ngIf="name.invalid">Please enter memo</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-select name="plan"  [(ngModel)]="bookInfo.plan" placeholder="Select plan" #plan="ngModel" required>
+            <mat-option  value="0" selected>No plan</mat-option>
+            <mat-option  value="5" >Northwest Semesterly</mat-option>
+            <mat-option  value="10" >Northwest Yearly</mat-option>
+          </mat-select>
+        </mat-form-field>
+        {{plan.touched}}
+        <mat-error *ngIf="plan.invalid">Please select plan</mat-error>
+
+        <mat-divider></mat-divider>
+        <p *ngIf="plan.value"><b>Total cost : ${{ 100 - ( 100 * plan.value /100)}}</b></p>
+        <p *ngIf="!plan.value"><b>Total cost : $100 </b></p>
+
+        <mat-divider></mat-divider>
+        <mat-form-field class="example-full-width">
+          <input name="nameCard" [(ngModel)]="bookInfo.nameCard" #nameCard="ngModel" matInput placeholder="Name on card" required>
+          <mat-error *ngIf="nameCard.invalid">Please enter name</mat-error>
         </mat-form-field>
         <mat-form-field class="example-full-width">
-          <input name="emailid" [(ngModel)]="contact.emailid" #emailid="ngModel" matInput placeholder="Email Id"
-            required>
-          <mat-error *ngIf="emailid.invalid">Please enter emailid</mat-error>
+          <input name="cardNo" type="cardNo" [(ngModel)]="bookInfo.cardNo" #cardNo="ngModel" matInput placeholder="Enter card no" required>
+          <mat-error *ngIf="cardNo.invalid">Please enter card no</mat-error>
         </mat-form-field>
         <mat-form-field class="example-full-width">
-          <input name="subject" [(ngModel)]="contact.subject" #subject="ngModel" matInput placeholder="Subject"
-            required>
-          <mat-error *ngIf="subject.invalid">Please enter subject</mat-error>
+          <input name="cvv" type="password" [(ngModel)]="bookInfo.cvv" #cvv="ngModel" matInput placeholder="CVV" required>
+          <mat-error *ngIf="cvv.invalid">Please enter cvv</mat-error>
         </mat-form-field>
-        <mat-form-field class="example-full-width">
-            <textarea name="description" [(ngModel)]="contact.description" rows="5" #description="ngModel" matInput placeholder="Description"
-              required></textarea>
-            <mat-error *ngIf="description.invalid">Please enter description</mat-error>
-          </mat-form-field>
-        <button class="mt1" type="submit" mat-raised-button color="primary">Submit</button>
+        <button class="mt1" type="submit" mat-raised-button color="primary">Confirm Booking</button>
+        <button class="mt1" style="margin-left:5px" type="button" mat-raised-button color="secondary" [routerLink]="['/user/book-parking']" routerLinkActive="router-link-active" >Cancel</button>
       </form>
     </mat-card-content>
   </mat-card>

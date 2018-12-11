@@ -10,6 +10,8 @@ import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatSelectModule} from '@angular/material/select';
+import {MatDividerModule} from '@angular/material/divider';
 @NgModule({
     imports: [
         CommonModule,
@@ -22,7 +24,9 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
         MatTableModule,
         MatPaginatorModule,
         MatDialogModule,
-        MatSnackBarModule
+        MatSnackBarModule,
+        MatSelectModule,
+        MatDividerModule
     ],
     exports: [
         CommonModule,
@@ -35,7 +39,9 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
         MatTableModule,
         MatPaginatorModule,
         MatDialogModule,
-        MatSnackBarModule
+        MatSnackBarModule,
+        MatSelectModule,
+        MatDividerModule
     ],
 })
 export class CustomMaterialModule { }
