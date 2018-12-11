@@ -7,13 +7,28 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
   styleUrls: ['./add-or-edit-user.component.css']
 })
 export class AddOrEditUserComponent implements OnInit {
+  adduser = ''
+  
   constructor(public dialogRef: MatDialogRef<AddOrEditUserComponent>,
-    @Inject(MAT_DIALOG_DATA) public data) { }
+    @Inject(MAT_DIALOG_DATA) public data) {
+    this.adduser = { ...data};  
+    
+  }
 
   ngOnInit() {
   }
 
-  onNoClick(): void {
-    this.dialogRef.close();
+  onNoClick(data): void {
+
+    this.dialogRef.close({isCanceled : true});
+    
+  }
+  login(data){
+    console.log('save called')
+    if(data.valid){
+      data.isCanceled = false;
+      data.userData = this.adduser
+      this.dialogRef.close(data);
+    }
   }
 }

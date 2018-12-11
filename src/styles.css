@@ -15,3 +15,7 @@ body{
 .active-link{
     background: #f8f8f833 !important;
 }
+
+.notification {
+    color: white !important;
+}

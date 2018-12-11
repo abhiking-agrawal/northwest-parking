@@ -1,8 +1,8 @@
 <div fxLayout="row" fxLayoutAlign="center center" class="page-body">
   <mat-card class="example-card" fxFlexAlign="center">
     <mat-card-content>
-      <mat-tab-group>
-        <mat-tab label="Login">
+      <mat-tab-group [selectedIndex]="selectedTab">
+        <mat-tab label="Login" >
           <form class="example-form mt1" #signInForm="ngForm"  (ngSubmit)="login(signInForm)" autocomplete="off">
             <mat-form-field class="example-full-width">
               <input name="username" [(ngModel)]="user.username" #username="ngModel" matInput placeholder="Username" required>
@@ -15,7 +15,7 @@
             <button class="mt1" type="submit" mat-raised-button color="primary" >Login</button>
           </form>
         </mat-tab>
-        <mat-tab label="Sign Up">
+        <mat-tab label="Sign Up" >
           <form class="mt1" #signUpForm="ngForm"  (ngSubmit)="signUp(signUpForm)" autocomplete="off">
             <mat-form-field class="example-full-width">
               <input name="firstName" [(ngModel)]="user.firstName" #firstName="ngModel" matInput placeholder="First name" required>

@@ -1,8 +1,34 @@
+<form class="example-form mt1" #signInForm="ngForm"  (ngSubmit)="login(signInForm)" autocomplete="off">
 <h1 mat-dialog-title>{{data.type}} User</h1>
 <div mat-dialog-content>
-  <p><b>First name</b></p>
+   
+            <mat-form-field class="example-full-width">
+              <input name="firstName" [(ngModel)]="adduser.firstName" #firstName="ngModel" matInput placeholder="First name" required>
+              <mat-error *ngIf="firstName.invalid">Please enter first name</mat-error>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <input name="lastName" [(ngModel)]="adduser.lastName" #lastName="ngModel" matInput placeholder="Last name" required>
+              <mat-error *ngIf="lastName.invalid">Please enter last name</mat-error>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <input type="email" name="emailId" [(ngModel)]="adduser.emailId" #emailId="ngModel" matInput placeholder="Email" required>
+              <mat-error *ngIf="emailId.invalid">Please enter email</mat-error>
+            </mat-form-field>
+            <mat-form-field *ngIf="data.type == 'Add'" class="example-full-width">
+              <input type="password" name="password" [(ngModel)]="adduser.password" #password="ngModel" matInput placeholder="Password" required>
+              <mat-error *ngIf="password.invalid">Please enter password</mat-error>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <input type="phoneNumber" name="phoneNumber" [(ngModel)]="adduser.phoneNumber" #phoneNumber="ngModel" matInput placeholder="Phone Number" required>
+              <mat-error *ngIf="phoneNumber.invalid">Please enter phoneNumber</mat-error>
+            </mat-form-field>
+
+         
 
 </div>
 <div mat-dialog-actions>
-  <button mat-button (click)="onNoClick()" color="primary">Save or Update</button>
+  <button class="mt1" type="submit"  mat-raised-button color="primary" >Save</button>
+  <button class="mt1" type="button" (click)="onNoClick()" mat-raised-button color="primary" >Cancel</button>
 </div>
+
+</form>

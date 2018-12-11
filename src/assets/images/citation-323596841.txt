@@ -1,0 +1,1 @@
+Zimbra, David & Abbasi, Ahmed & Zeng, Daniel & Chen, Hsinchun. (2018). The State-of-the-Art in Twitter Sentiment Analysis: A Review and Benchmark Evaluation. ACM Transactions on Management Information Systems. xx, No. x. 10.1145/3185045. 

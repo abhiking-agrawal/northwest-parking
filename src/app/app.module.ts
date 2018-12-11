@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FormsModule} from '@angular/forms';
 import {FlexLayoutModule} from '@angular/flex-layout';
-
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LayoutComponent } from './layout/layout.component';
@@ -18,6 +18,15 @@ import { ParkingSpotComponent } from './admin/parking-spot/parking-spot.componen
 import { DeleteUserComponent } from './dialogs/delete-user/delete-user.component';
 import { ViewUserComponent } from './dialogs/view-user/view-user.component';
 import { AddOrEditUserComponent } from './dialogs/add-or-edit-user/add-or-edit-user.component';
+import { AddOrEditParkingLotComponent } from './dialogs/add-or-edit-parking-lot/add-or-edit-parking-lot.component';
+import { DeleteParkingSlotComponent } from './dialogs/delete-parking-slot/delete-parking-slot.component';
+import { ViewParkingLotComponent } from './dialogs/view-parking-lot/view-parking-lot.component';
+import { ParkingSlotBookingComponent } from './user/parking-slot-booking/parking-slot-booking.component';
+import { PaymentHistoryComponent } from './user/payment-history/payment-history.component';
+import { NotificationService } from './services/notification.service';
+import { LoginService } from './services/login.service';
+import { DataService } from './services/data.service';
+import { BookParkingInfoComponent } from './book-parking-info/book-parking-info.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +41,13 @@ import { AddOrEditUserComponent } from './dialogs/add-or-edit-user/add-or-edit-u
     ParkingSpotComponent,
     DeleteUserComponent,
     ViewUserComponent,
-    AddOrEditUserComponent
+    AddOrEditUserComponent,
+    AddOrEditParkingLotComponent,
+    DeleteParkingSlotComponent,
+    ViewParkingLotComponent,
+    ParkingSlotBookingComponent,
+    PaymentHistoryComponent,
+    BookParkingInfoComponent
   ],
   imports: [
     BrowserModule,
@@ -40,12 +55,21 @@ import { AddOrEditUserComponent } from './dialogs/add-or-edit-user/add-or-edit-u
     FormsModule,
     AppRoutingModule,
     CustomMaterialModule,
-    FlexLayoutModule   
+    FlexLayoutModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    LoginService,
+    NotificationService,
+    DataService
+  ],
   entryComponents:[
     DeleteUserComponent,
-    ViewUserComponent
+    ViewUserComponent,
+    AddOrEditUserComponent,
+    AddOrEditParkingLotComponent,
+    DeleteParkingSlotComponent,
+    ViewParkingLotComponent
   ],
   bootstrap: [AppComponent]
 })

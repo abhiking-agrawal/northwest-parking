@@ -6,8 +6,14 @@ import { OffersComponent } from './offers/offers.component';
 import { HomeComponent } from './home/home.component';
 import { UserComponent } from './admin/user/user.component';
 import { ParkingSpotComponent } from './admin/parking-spot/parking-spot.component';
+import { ParkingSlotBookingComponent } from './user/parking-slot-booking/parking-slot-booking.component';
+import { PaymentHistoryComponent } from './user/payment-history/payment-history.component';
+import { BookParkingInfoComponent } from './book-parking-info/book-parking-info.component';
 
 const routes: Routes = [
+  { path: 'user/payment-history', component: PaymentHistoryComponent },
+  { path: 'user/book-parking/:id', component: BookParkingInfoComponent },
+  { path: 'user/book-parking', component: ParkingSlotBookingComponent },
   { path: 'admin/users', component: UserComponent },
   { path: 'admin/parkingspots', component: ParkingSpotComponent },
   { path: 'contact-us', component: ContactUsComponent },

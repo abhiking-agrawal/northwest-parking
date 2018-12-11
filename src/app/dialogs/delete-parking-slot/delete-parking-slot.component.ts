@@ -2,14 +2,14 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
-  selector: 'app-delete-user',
-  templateUrl: './delete-user.component.html',
-  styleUrls: ['./delete-user.component.css']
+  selector: 'app-delete-parking-slot',
+  templateUrl: './delete-parking-slot.component.html',
+  styleUrls: ['./delete-parking-slot.component.css']
 })
-export class DeleteUserComponent implements OnInit {
+export class DeleteParkingSlotComponent implements OnInit {
   id : any
  flag =  true
-  constructor(public dialogRef: MatDialogRef<DeleteUserComponent>,
+  constructor(public dialogRef: MatDialogRef<DeleteParkingSlotComponent>,
     @Inject(MAT_DIALOG_DATA) public dataO) { 
       this.id = dataO.id
     }

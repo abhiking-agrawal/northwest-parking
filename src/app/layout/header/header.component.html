@@ -8,6 +8,11 @@
   <button mat-button routerLinkActive="active-link" routerLink="/home" >Home</button>
   <button mat-button routerLinkActive="active-link" routerLink="/offers" >Offers</button>
   <button mat-button routerLinkActive="active-link" routerLink="/contact-us" >Contact Us</button>
-  <button mat-button routerLinkActive="active-link" routerLink="/signIn" >Login</button>
+  <button mat-button *ngIf="ls.isLoggedIn() && ls.isAdmin()" routerLinkActive="active-link" routerLink="/admin/users" >Users</button>
+  <button mat-button *ngIf="ls.isLoggedIn() && ls.isAdmin()" routerLinkActive="active-link" routerLink="/admin/parkingspots" >Parking Slot</button>
+  <button mat-button *ngIf="ls.isLoggedIn() && !ls.isAdmin()" routerLinkActive="active-link" routerLink="/user/book-parking" >Book Parking Slot</button>
+  <button mat-button *ngIf="ls.isLoggedIn() && !ls.isAdmin()" routerLinkActive="active-link" routerLink="/user/payment-history" >Payment History</button>
+  <button mat-button *ngIf="!ls.isLoggedIn()" routerLinkActive="active-link" routerLink="/signIn" >Login</button>
+  <button mat-button *ngIf="ls.isLoggedIn()" (click)="ls.logout()" >Logout</button>
   
 </mat-toolbar>
